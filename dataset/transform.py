@@ -32,6 +32,7 @@ def get_transform(ds_type, train_dataset_path, train_mode=False, eval_mode=True)
     else:
         return None
 
+
 def adult_income_transform(train_dataset_path):
     df_raw = dataset.utils.get_adult_income_raw_dataset(train_dataset_path)
     preprocessor = AdultIncomeTransform()

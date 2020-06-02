@@ -107,21 +107,6 @@ class FairnessDataset(torch.utils.data.Dataset, metaclass=ABCMeta):
         return np.array([weights[np.where(np.all(self.groups == row, axis=1))[0][0]] for row in
                          self.data[self.groups_columns].values])
 
-    def mislabel_data(self, mislabel: Sequence[float]):
-        if len(mislabel) == 1:
-            mislabel_val = mislabel[0]
-            mislabel = np.zeros(self.groups.shape[0])
-            mislabel[np.argmin(self.groups_count)] = mislabel_val  # update minority
-        mislabel = np.clip(mislabel, 0., 1.)
-        for i, (group, mislabel_val) in enumerate(zip(self.groups, mislabel)):
-            if mislabel_val == 0.0:
-                continue
-            mask = np.all(self.data[self.groups_columns].values == group, axis=1)
-            indices = self.data.index[mask].values
-            mislabel_indices = np.random.permutation(indices)[:int(mislabel_val * indices.shape[0])]
-            mislabel_data = np.abs(1 - self.data.loc[mislabel_indices, self.label_column].values)
-            self.data.loc[mislabel_indices, self.label_column] = mislabel_data
-
     def __len__(self):
         return self.data.shape[0]
 

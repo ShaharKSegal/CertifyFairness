@@ -48,8 +48,6 @@ class ArgsNamespace(argparse.Namespace):
     transform_test_crop_size: int
     transform_test_crop_prob: float
 
-    mislabel: List[float]
-
     knn_k: int
 
     data_path: str

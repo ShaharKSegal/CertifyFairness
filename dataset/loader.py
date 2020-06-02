@@ -72,9 +72,6 @@ def get_fair_loaders(dataset_cls, train_path, eval_path, test_path, train_transf
         group_weights = config.args.group_weights
     ds_train = dataset_cls(train_path, config.args.dataset, train_transform, group_weights)
 
-    # add mislabeling
-    ds_train.mislabel_data(config.args.mislabel)
-
     # create loaders
     train_loader = create_loader(ds_train, True)
     eval_loader = create_loader(dataset_cls(eval_path, config.args.dataset, eval_transform, None))

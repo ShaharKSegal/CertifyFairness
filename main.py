@@ -70,12 +70,6 @@ parser.add_argument('--transform_test_crop_size', default=1000, type=int,
                     help='adds image crop to test transformation. '
                          'Relevant only for image datasets, ignored otherwise')
 
-# mislabeling
-parser.add_argument('--mislabel', default=[0.0], type=float, nargs='*',
-                    help='adds mislabeling, by default the labels are correct for each label+fairness group. '
-                         'either by a list of decimals between 0.0 to 1.0 with length = (#label)*(#fairness groups) '
-                         'or a single value, which adds mislabeling on the smallest minority')
-
 # k-nn arguments
 parser.add_argument('--knn_k', type=int, default=1, help='k nearest neighbours k hyperparameter')
 
