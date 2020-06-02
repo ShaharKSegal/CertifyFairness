@@ -1,4 +1,4 @@
-# CertifyFairness
+# Fairness in the Eyes of the Data
 
 ## Requirements
 
