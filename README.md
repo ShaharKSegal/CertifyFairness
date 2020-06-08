@@ -1,7 +1,8 @@
 
 # Fairness in the Eyes of the Data
 
-This repository is the official implementation of the experiments in Fairness in the Eyes of the Data (link when published). Scripts we used to run the experiments are available at [experiments](https://github.com/ShaharKSegal/CertifyFairness/tree/master/experiments).
+This repository is the official implementation of the experiments in Fairness in the Eyes of the Data (link when published). 
+Scripts we used to run the experiments with are available at [experiments](https://github.com/ShaharKSegal/CertifyFairness/tree/master/experiments).
 
 ## Requirements
 
