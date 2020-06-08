@@ -23,14 +23,15 @@ python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <m
 For bias training, adjust the weights argument as suits your need:
 
 ```bias train
-python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
---ignore_loss_weights --runname <name_your_run> --ignore_timestamp --verbose --group_weights <bias weights>
+python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\ 
+--lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_your_run>\
+--ignore_timestamp --verbose --group_weights <bias weights>
 ```
 
 For augmented training:
 ```augmented train
-python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
---ignore_loss_weights --runname <name_your_run> --verbose \
+python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\ 
+--lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_your_run> --verbose \
 --activate_transformations\
 --transform_test_rotate_prob <p1> --transform_train_rotate_prob <p2>\
 --transform_test_crop_prob <p3> --transform_train_crop_prob <p4>\
@@ -50,23 +51,22 @@ python main.py --help
 
 For evaluation of likelihood and risk, use the same parameters for training with the name of the run, model and dataset:
 ```fair eval
-python main.py --task fair_eval --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
---ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose --group_weights <bias weights>
+python main.py --task fair_eval --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\
+--lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose
 ```
 
 For evaluation of augmentation, use the same parameters for training with the name of the run, model and dataset:
 ```fair eval
 python main.py --task augment_testing_regular --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\ 
---lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose\ 
---group_weights <bias weights>
+--lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose
 ```
 
 ## Results
 
-We trained the models in regular or bias mode and tested the empirical fairness gap in the private setup:
+We trained the models in regular or bias mode and tested the empirical fairness gap.
+Datasets: [UTKFace](https://susanqq.github.io/UTKFace/), [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [Colored-MNIST (section 5.2)](https://arxiv.org/abs/1907.02893)
 
-### [UTKFace](https://susanqq.github.io/UTKFace/), [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [Colored-MNIST (section 5.2)](https://arxiv.org/abs/1907.02893)
-
+Results for the private setup:
 | Dataset         | Model         |  Accuracy  | Empirical Fairness Gap |
 | --------------- | ------------- | ---------- | ---------------------- |
 | UTKFace         | ResNet18      |   89.76%   |      0.012             |
@@ -76,7 +76,7 @@ We trained the models in regular or bias mode and tested the empirical fairness 
 | C-MNIST         | LeNet         |   98.11%   |      0.001             |
 | C-MNIST         | Bias-LeNet    |   74.01%   |      0.450             |
 
-In the public augmented setup:
+Results for public augmented setup:
 
 | Dataset         | Model         |  Accuracy  | Empirical Fairness Gap |
 | --------------- | ------------- | ---------- | ---------------------- |
