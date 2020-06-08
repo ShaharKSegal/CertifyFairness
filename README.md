@@ -2,11 +2,11 @@
 # Fairness in the Eyes of the Data
 
 This repository is the official implementation of the experiments in Fairness in the Eyes of the Data (link when published).   
-Scripts we used to run the experiments with are available at [experiments](https://github.com/ShaharKSegal/CertifyFairness/tree/master/experiments).
+Scripts we used to run the experiments are available at [experiments](https://github.com/ShaharKSegal/CertifyFairness/tree/master/experiments).
 
 ## Requirements
 
-Runs on python 3.7+ install requirements:
+Runs on python 3.7+, install dependencies using:
 
 ```setup
 pip install -r requirements.txt
@@ -20,7 +20,7 @@ For regular training, run the following command:
 python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
 --ignore_loss_weights --runname <name_your_run> --verbose
 ```
-For bias training, adjust the weights argument as suits your need:
+For bias training, adjust the group_weights argument as suits your need:
 
 ```bias train
 python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\ 
@@ -42,7 +42,7 @@ python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <m
 --transform_train_crop_size <m3> --transform_test_crop_size <m4>
 ```
 
-Documentation of each parameter and other options are available via running:
+Documentation of each argument and other options are available via running:
 ```help
 python main.py --help
 ```
