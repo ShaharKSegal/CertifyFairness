@@ -17,25 +17,28 @@ pip install -r requirements.txt
 For regular training, run the following command:
 
 ```regular train
-python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_your_run> --verbose
+python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
+--ignore_loss_weights --runname <name_your_run> --verbose
 ```
 For bias training, adjust the weights argument as suits your need:
 
 ```bias train
-python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_your_run> --ignore_timestamp --verbose --group_weights <bias weights>
+python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
+--ignore_loss_weights --runname <name_your_run> --ignore_timestamp --verbose --group_weights <bias weights>
 ```
 
 For augmented training:
 ```augmented train
-python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_your_run> --verbose \
-     --activate_transformations\
-		 --transform_test_rotate_prob <p1> --transform_train_rotate_prob <p2>\
-		 --transform_test_crop_prob <p3> --transform_train_crop_prob <p4>\
-		 --transform_train_crop_size <p5> --transform_test_crop_size <p6>\
-		 --transform_train_rectangle_erasing_prob <p7> --transform_test_rectangle_erasing_prob <p8>\
-		 --transform_train_gaussian_noise_std <p9> --transform_test_gaussian_noise_std <p10>\
-     --transform_train_rotate_angle <m1> --transform_test_rotate_angle <m2>\
-     --transform_train_crop_size <m3> --transform_test_crop_size <m4>
+python main.py --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
+--ignore_loss_weights --runname <name_your_run> --verbose \
+--activate_transformations\
+--transform_test_rotate_prob <p1> --transform_train_rotate_prob <p2>\
+--transform_test_crop_prob <p3> --transform_train_crop_prob <p4>\
+--transform_train_crop_size <p5> --transform_test_crop_size <p6>\
+--transform_train_rectangle_erasing_prob <p7> --transform_test_rectangle_erasing_prob <p8>\
+--transform_train_gaussian_noise_std <p9> --transform_test_gaussian_noise_std <p10>\
+--transform_train_rotate_angle <m1> --transform_test_rotate_angle <m2>\
+--transform_train_crop_size <m3> --transform_test_crop_size <m4>
 ```
 
 Documentation of each parameter and other options are available via running:
@@ -47,12 +50,15 @@ python main.py --help
 
 For evaluation of likelihood and risk, use the same parameters for training with the name of the run, model and dataset:
 ```fair eval
-python main.py --task fair_eval --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose --group_weights <bias weights>
+python main.py --task fair_eval --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n>\ 
+--ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose --group_weights <bias weights>
 ```
 
 For evaluation of augmentation, use the same parameters for training with the name of the run, model and dataset:
 ```fair eval
-python main.py --task augment_testing_regular --dataset <dataset_name> --data_path <path_to_dataset> --model <model> --lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose --group_weights <bias weights>
+python main.py --task augment_testing_regular --dataset <dataset_name> --data_path <path_to_dataset> --model <model>\ 
+--lr <lr> --max_epochs=<n> --ignore_loss_weights --runname <name_of_run> --ignore_timestamp --verbose\ 
+--group_weights <bias weights>
 ```
 
 ## Results
