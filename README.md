@@ -1,7 +1,7 @@
 
 # Fairness in the Eyes of the Data
 
-This repository is the official implementation of the experiments in Fairness in the Eyes of the Data (link when published). 
+This repository is the official implementation of the experiments in Fairness in the Eyes of the Data (link when published).   
 Scripts we used to run the experiments with are available at [experiments](https://github.com/ShaharKSegal/CertifyFairness/tree/master/experiments).
 
 ## Requirements
@@ -63,7 +63,7 @@ python main.py --task augment_testing_regular --dataset <dataset_name> --data_pa
 
 ## Results
 
-We trained the models in regular or bias mode and tested the empirical fairness gap.
+We trained the models in regular or bias mode and tested the empirical fairness gap.  
 Datasets: [UTKFace](https://susanqq.github.io/UTKFace/), [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [Colored-MNIST (section 5.2)](https://arxiv.org/abs/1907.02893)
 
 Results for the private setup:
