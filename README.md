@@ -12,6 +12,10 @@ Runs on python 3.7+, install dependencies using:
 pip install -r requirements.txt
 ```
 
+## Preprocess
+Preprocess scripts are available at [prerocess_utils](https://github.com/ShaharKSegal/CertifyFairness/tree/master/preprocess_utils). Adjustments to the scripts source and destination paths might be required.  
+For Datasets: [UTKFace](https://susanqq.github.io/UTKFace/) and [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), please download the official dataset from the links before running the preprocess.
+
 ## Training
 
 For regular training, run the following command:
@@ -64,6 +68,7 @@ python main.py --task augment_testing_regular --dataset <dataset_name> --data_pa
 ## Results
 
 We trained the models in regular or bias mode and tested the empirical fairness gap.  
+
 Datasets: [UTKFace](https://susanqq.github.io/UTKFace/), [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [Colored-MNIST (section 5.2)](https://arxiv.org/abs/1907.02893)
 
 Results for the private setup:
