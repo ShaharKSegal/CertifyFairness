@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Preprocess
 Preprocess scripts are available at [prerocess_utils](https://github.com/ShaharKSegal/CertifyFairness/tree/master/preprocess_utils). Adjustments to the scripts source and destination paths might be required.  
-For Datasets: [UTKFace](https://susanqq.github.io/UTKFace/) and [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), please download the official dataset from the links before running the preprocess.
+For datasets [UTKFace](https://susanqq.github.io/UTKFace/) and [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), please download the official dataset from the links before running the preprocess.
 
 ## Training
 
